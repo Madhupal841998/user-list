@@ -1,0 +1,121 @@
+.section{
+    padding: 15px;
+}
+h1 {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    color: #3E3B3B;
+}
+
+form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  label {
+    display: block;
+    width: 8%;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 30%;
+    padding: 5px 17px;
+    margin-bottom: 10px;
+    border: 1px solid #CBB;
+    border-radius: 15px;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 5px 15px;
+    text-align: left;
+}
+
+.styled-table tbody td {
+    text-align: left;
+    text-wrap: nowrap;
+    color: #464736;
+    font-size: 12px;
+}
+
+.styled-table th {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #F3EFEF;
+    color: #36454F;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 5s linear infinite;
+    margin: 50px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 35%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.8); 
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    animation: slideIn 0.5s ease-in-out forwards, fadeOut 0.5s 9.5s forwards; 
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

@@ -1,0 +1,42 @@
+<section class="section">
+<div *ngIf="loading" class="loader"></div>
+<form>
+    <label for="nameFilter">Filter by Name:</label>
+    <input type="text" id="nameFilter" name="nameFilter" [(ngModel)]="nameFilter">
+    <label for="emailFilter">Filter by Email:</label>
+    <input type="text" id="emailFilter" name="emailFilter" [(ngModel)]="emailFilter">
+  </form>
+<ng-container *ngIf="!loading">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>website</th>
+                <th>username</th>
+                <th>company</th>
+                <th>street</th>
+                <th>suite</th>
+                <th>city</th>
+                <th>zipcode</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredUsers">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.website }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.company.name }}</td>
+                <td>{{ user.address.street }}</td>
+                <td>{{ user.address.suite }}</td>
+                <td>{{ user.address.city }}</td>
+                <td>{{ user.address.zipcode }}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
+<div *ngIf="error" class="error-toast">{{ error }}</div>
+</section>
